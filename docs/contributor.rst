@@ -11,7 +11,7 @@
 - **halcyon <王墉>** DevOps 资深开发者, 0.3.2 核心开发者之一
 - **yumaojun03 <喻茂峻>** DevOps 资深开发者，擅长 Python、Go 以及 PaaS 平台开发
 - **kelianchun <柯连春>** DevOps 资产开发者，修复了很多 Bugs
-- **q4speed <莫鹍>** 架构师，贡献了 0.5.0 Windows 远程桌面登录大部分代码
-- **ZhangFengyi <张峰毅>** 贡献了 0.5.0 新版文档
-- **Aaron3S <沈晨阳>** 贡献了 0.5.0 新版文档
-- **liqiang-fit2cloud <张立强>** 0.5.0 版本测试，给资产树设计贡献了很多建议
+- **q4speed <莫鹍>** 架构师，贡献了 Windows 远程桌面登录大部分代码
+- **ZhangFengyi <张峰毅>** 贡献了 新版文档
+- **Aaron3S <沈晨阳>** 贡献了 新版文档
+- **liqiang-fit2cloud <张立强>** 版本测试，给资产树设计贡献了很多建议

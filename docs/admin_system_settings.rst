@@ -33,7 +33,7 @@ LDAP 设置
 
 点击页面上边的" LDAP 设置" TAB ，进入 LDAP 设置页面，编辑 LDAP 地址、DN、用户 OU、用户过滤器、LDAP 属性映射和是否使用 SSL、是否启用 LDAP 认证等信息，点击“测试连接”按钮，测试是否正确设置，点击“提交”按钮，完成 LDAP 设置。
 
-如果这里有问题请手动用 ldapsearch命令测试一下
+如果这里有问题请手动用 ldapsearch命令测试一下, 如果能唯一搜索出这个用户代表你的设置是对的，然后根据用户的属性填写映射关系
 
 .. image:: _static/img/ldapsearch.png
     :alt: LDAP搜索实例
@@ -43,6 +43,27 @@ LDAP 设置
    # 注意下面的 testuser对应的是你ldap server上存在的用户，填写到配置中需要改为 %(user)s
    ldapsearch -x -W -h ldap://127.0.0.1:389 -b "ou=People,dc=xxx,dc=com" -D "cn=admin,dc=xxx,dc=com" "(cn=testuser)"
    ldapsearch -x -W -h ldap://127.0.0.1:389 -b "dc=xxx,dc=com" -D "cn=admin,dc=xxx,dc=com" "(&(cn=testuser)(objectClass=account))"
+
+   # extended LDIF
+   #
+   # LDAPv3
+   # base <ou=People,dc=xxx,dc=com> with scope subtree
+   # filter: (cn=*)
+   # requesting: ALL
+   #
+
+   # testuser, People, xxx.com
+   dn: uid=testuser,ou=People,dc=xxx,dc=com
+   uid: testuser       # 打算使用该属性映射为jumpserver username
+   cn: testuser        # 打算使用该属性映射为jumpserver name
+   mail: xyz@google.coom   # 打算使用该属性映射为jumpserver email
+   objectClass: account
+   objectClass: posixAccount
+   objectClass: top
+   objectClass: shadowAccount
+   ...
+
+
 
 .. _terminal_settings:
 
