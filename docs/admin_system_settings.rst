@@ -33,6 +33,17 @@ LDAP 设置
 
 点击页面上边的" LDAP 设置" TAB ，进入 LDAP 设置页面，编辑 LDAP 地址、DN、用户 OU、用户过滤器、LDAP 属性映射和是否使用 SSL、是否启用 LDAP 认证等信息，点击“测试连接”按钮，测试是否正确设置，点击“提交”按钮，完成 LDAP 设置。
 
+如果这里有问题请手动用 ldapsearch命令测试一下
+
+.. image:: _static/img/ldapsearch.png
+    :alt: LDAP搜索实例
+
+::
+
+   # 注意下面的 testuser对应的是你ldap server上存在的用户，填写到配置中需要改为 %(user)s
+   ldapsearch -x -W -h ldap://127.0.0.1:389 -b "ou=People,dc=xxx,dc=com" -D "cn=admin,dc=xxx,dc=com" "(cn=testuser)"
+   ldapsearch -x -W -h ldap://127.0.0.1:389 -b "dc=xxx,dc=com" -D "cn=admin,dc=xxx,dc=com" "(&(cn=testuser)(objectClass=account))"
+
 .. _terminal_settings:
 
 终端设置
